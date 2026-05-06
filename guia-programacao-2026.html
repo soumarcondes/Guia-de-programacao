@@ -1,0 +1,2311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚀 O CÓDIGO SECRETO — Guia Definitivo 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --py: #00D4AA;
+    --py-glow: #00D4AA33;
+    --js: #F7DF1E;
+    --js-glow: #F7DF1E33;
+    --sc: #FF6B9D;
+    --sc-glow: #FF6B9D33;
+    --bg: #050508;
+    --surface: #0A0A12;
+    --surface-2: #11111A;
+    --text: #E8E8F0;
+    --text-dim: #8888A0;
+    --border: rgba(255,255,255,0.06);
+    --glass: rgba(255,255,255,0.03);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== PARTICLES CANVAS ===== */
+  #particles-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 20% 50%, rgba(0,212,170,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 80% 30%, rgba(247,223,30,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse 40% 30% at 50% 80%, rgba(255,107,157,0.1) 0%, transparent 50%);
+    animation: bgShift 12s ease-in-out infinite alternate;
+  }
+
+  @keyframes bgShift {
+    0% { transform: scale(1) rotate(0deg); opacity: 0.6; }
+    50% { transform: scale(1.1) rotate(2deg); opacity: 1; }
+    100% { transform: scale(1) rotate(-2deg); opacity: 0.6; }
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 999px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    animation: fadeUp 1s ease both;
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-badge .pulse {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--py);
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 10px var(--py);
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+
+  .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    line-height: 1.05;
+    max-width: 900px;
+    letter-spacing: -0.03em;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+
+  .hero h1 .gradient-text {
+    background: linear-gradient(135deg, var(--py) 0%, var(--js) 50%, var(--sc) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+  }
+
+  .hero h1 .gradient-text::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; left: 0;
+    width: 100%; height: 4px;
+    background: linear-gradient(90deg, var(--py), var(--js), var(--sc));
+    border-radius: 2px;
+    opacity: 0.6;
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+  }
+
+  .hero-sub {
+    max-width: 600px;
+    color: var(--text-dim);
+    font-size: 1.15rem;
+    margin-top: 1.5rem;
+    animation: fadeUp 1s 0.4s ease both;
+    font-weight: 300;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+    animation: fadeUp 1s 0.6s ease both;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+  }
+
+  .stat-item:hover {
+    border-color: var(--py);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 40px var(--py-glow);
+  }
+
+  .stat-number {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--py);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.2rem;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    color: var(--text-dim);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+  }
+
+  /* ===== NAVIGATION ===== */
+  .nav-langs {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 100;
+    display: flex;
+    gap: 0.5rem;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.5rem;
+    backdrop-filter: blur(20px);
+  }
+
+  .nav-langs a {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    transition: all 0.3s;
+    border: 1px solid transparent;
+  }
+
+  .nav-langs a:hover, .nav-langs a.active {
+    background: var(--surface-2);
+    color: var(--text);
+  }
+
+  .nav-langs a.py:hover, .nav-langs a.py.active { border-color: var(--py); color: var(--py); }
+  .nav-langs a.js:hover, .nav-langs a.js.active { border-color: var(--js); color: var(--js); }
+  .nav-langs a.sc:hover, .nav-langs a.sc.active { border-color: var(--sc); color: var(--sc); }
+
+  /* ===== SECTIONS ===== */
+  section {
+    padding: 6rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 30px;
+    height: 2px;
+    border-radius: 1px;
+  }
+
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .section-title span {
+    position: relative;
+  }
+
+  /* ===== CARDS ===== */
+  .glass-card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    backdrop-filter: blur(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--py), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .glass-card:hover::before { opacity: 1; }
+  .glass-card:hover {
+    border-color: rgba(255,255,255,0.12);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+
+  .glass-card p + p { margin-top: 1rem; }
+
+  /* ===== PYTHON SECTION ===== */
+  #python .section-label { color: var(--py); }
+  #python .section-label::before { background: var(--py); }
+  #python .section-title span { color: var(--py); }
+  #python .glass-card::before { background: linear-gradient(90deg, transparent, var(--py), transparent); }
+
+  .py-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .py-card {
+    background: linear-gradient(135deg, rgba(0,212,170,0.05) 0%, transparent 100%);
+    border: 1px solid rgba(0,212,170,0.15);
+    border-radius: 16px;
+    padding: 1.75rem;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .py-card::after {
+    content: '';
+    position: absolute;
+    top: -50%; right: -50%;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, var(--py-glow) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .py-card:hover::after { opacity: 1; }
+  .py-card:hover {
+    border-color: rgba(0,212,170,0.4);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 50px var(--py-glow);
+  }
+
+  .py-card .icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.75rem;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+
+  .py-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--py);
+    position: relative;
+    z-index: 1;
+  }
+
+  .py-card p {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ===== CODE BLOCKS ===== */
+  .code-block {
+    background: #080c14;
+    border: 1px solid rgba(0,212,170,0.2);
+    border-left: 3px solid var(--py);
+    border-radius: 0 12px 12px 0;
+    padding: 1.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    line-height: 2;
+    overflow-x: auto;
+    margin: 2rem 0;
+    position: relative;
+  }
+
+  .code-block .kw  { color: #FF7B72; }
+  .code-block .fn  { color: #D2A8FF; }
+  .code-block .str { color: #A5D6FF; }
+  .code-block .cmt { color: #6B7280; font-style: italic; }
+  .code-block .num { color: #F2CC60; }
+  .code-block .var { color: #E8E8F0; }
+  .code-block .cls { color: #FFA657; }
+
+  .code-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .code-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .code-dot.red { background: #FF5F56; }
+  .code-dot.yel { background: #FFBD2E; }
+  .code-dot.grn { background: #27C93F; }
+  .code-title { font-size: 0.7rem; color: var(--text-dim); margin-left: auto; }
+
+  /* ===== INTERACTIVE DEMO ===== */
+  .demo-container {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+
+  .demo-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .demo-tab {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-dim);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .demo-tab.active {
+    background: var(--py-glow);
+    border-color: var(--py);
+    color: var(--py);
+  }
+
+  .demo-tab:hover:not(.active) {
+    border-color: rgba(255,255,255,0.2);
+    color: var(--text);
+  }
+
+  .demo-output {
+    background: #080c14;
+    border-radius: 12px;
+    padding: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    min-height: 120px;
+    border: 1px solid rgba(0,212,170,0.1);
+    white-space: pre-wrap;
+    line-height: 1.8;
+    color: var(--text);
+  }
+
+  .demo-run-btn {
+    margin-top: 1rem;
+    padding: 0.75rem 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--py);
+    background: var(--py-glow);
+    color: var(--py);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .demo-run-btn:hover {
+    background: var(--py);
+    color: var(--bg);
+    box-shadow: 0 0 30px var(--py-glow);
+  }
+
+  /* ===== JAVASCRIPT SECTION ===== */
+  #javascript {
+    background: linear-gradient(180deg, transparent 0%, rgba(247,223,30,0.02) 20%, rgba(247,223,30,0.02) 80%, transparent 100%);
+    max-width: 100%;
+    padding: 6rem 2rem;
+  }
+
+  #javascript .inner { max-width: 1000px; margin: 0 auto; }
+  #javascript .section-label { color: var(--js); }
+  #javascript .section-label::before { background: var(--js); }
+  #javascript .section-title span { color: var(--js); }
+
+  .js-feature-list {
+    list-style: none;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .js-feature-list li {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: rgba(247,223,30,0.03);
+    border: 1px solid rgba(247,223,30,0.1);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .js-feature-list li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--js);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .js-feature-list li:hover::before { opacity: 1; }
+  .js-feature-list li:hover {
+    background: rgba(247,223,30,0.06);
+    border-color: rgba(247,223,30,0.2);
+    transform: translateX(5px);
+  }
+
+  .js-feature-list .bullet {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--js);
+    font-weight: 700;
+    font-size: 1.2rem;
+    min-width: 2.5rem;
+    text-align: center;
+    background: rgba(247,223,30,0.1);
+    border-radius: 8px;
+    padding: 0.25rem;
+  }
+
+  .js-feature-list h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--js);
+    margin-bottom: 0.3rem;
+  }
+
+  .js-feature-list p {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  .code-block.js-code {
+    border-color: rgba(247,223,30,0.2);
+    border-left-color: var(--js);
+  }
+
+  /* ===== SCRATCH SIMULATOR ===== */
+  #scratch .section-label { color: var(--sc); }
+  #scratch .section-label::before { background: var(--sc); }
+  #scratch .section-title span { color: var(--sc); }
+
+  .scratch-simulator {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem 0;
+    position: relative;
+  }
+
+  .scratch-workspace {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 1.5rem;
+    min-height: 500px;
+  }
+
+  .scratch-palette {
+    background: #1a1a2e;
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    border: 1px solid var(--border);
+  }
+
+  .scratch-palette-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+  }
+
+  .scratch-block-item {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    cursor: grab;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .scratch-block-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  }
+
+  .scratch-block-item.orange {
+    background: linear-gradient(135deg, #FF8C42, #FF6B35);
+    color: white;
+  }
+  .scratch-block-item.blue {
+    background: linear-gradient(135deg, #4C97FF, #357ABD);
+    color: white;
+  }
+  .scratch-block-item.green {
+    background: linear-gradient(135deg, #59C059, #4CAF50);
+    color: white;
+  }
+  .scratch-block-item.pink {
+    background: linear-gradient(135deg, #FF6B9D, #E91E63);
+    color: white;
+  }
+  .scratch-block-item.purple {
+    background: linear-gradient(135deg, #9966FF, #7B68EE);
+    color: white;
+  }
+
+  .scratch-canvas-area {
+    background: #0d1117;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .scratch-canvas-header {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+  }
+
+  #scratchCanvas {
+    flex: 1;
+    background: radial-gradient(circle at center, #1a1a2e 0%, #0d1117 100%);
+  }
+
+  .scratch-controls {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .scratch-btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .scratch-btn:hover {
+    border-color: var(--sc);
+    background: var(--sc-glow);
+    color: var(--sc);
+  }
+
+  .scratch-btn.primary {
+    background: var(--sc);
+    color: white;
+    border-color: var(--sc);
+  }
+
+  .scratch-btn.primary:hover {
+    background: #FF8FAB;
+    box-shadow: 0 0 20px var(--sc-glow);
+  }
+
+  .scratch-script-area {
+    background: #1a1a2e;
+    border-radius: 12px;
+    padding: 1rem;
+    min-height: 100px;
+    border: 2px dashed var(--border);
+    margin-top: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    transition: all 0.3s;
+  }
+
+  .scratch-script-area.drag-over {
+    border-color: var(--sc);
+    background: var(--sc-glow);
+  }
+
+  .scratch-script-block {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    margin: 0.25rem;
+    font-size: 0.8rem;
+    color: white;
+    cursor: move;
+  }
+
+  /* ===== COMPARISON TABLE ===== */
+  .compare-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .compare-table-wrapper {
+    overflow-x: auto;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .compare-table th {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+    text-align: left;
+    border-bottom: 2px solid var(--border);
+    background: var(--surface-2);
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+  }
+
+  .compare-table th:nth-child(2) { color: var(--py); }
+  .compare-table th:nth-child(3) { color: var(--js); }
+  .compare-table th:nth-child(4) { color: var(--sc); }
+
+  .compare-table td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-dim);
+    vertical-align: middle;
+    transition: background 0.2s;
+  }
+
+  .compare-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .compare-table tr:hover td:first-child { color: var(--text); }
+
+  .compare-table .score {
+    display: inline-flex;
+    gap: 0.15rem;
+    font-size: 1rem;
+  }
+
+  .compare-table .star { color: #FBBF24; }
+  .compare-table .empty { color: #374151; }
+
+  /* ===== ROADMAP ===== */
+  .roadmap {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 3rem 0;
+    position: relative;
+  }
+
+  .roadmap::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--py), var(--js), var(--sc));
+    border-radius: 1px;
+  }
+
+  .roadmap-step {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    position: relative;
+  }
+
+  .roadmap-dot {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+    z-index: 1;
+    transition: all 0.3s;
+  }
+
+  .roadmap-step:hover .roadmap-dot {
+    border-color: var(--py);
+    box-shadow: 0 0 20px var(--py-glow);
+    color: var(--py);
+  }
+
+  .roadmap-content h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: var(--text);
+  }
+
+  .roadmap-content p {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+  }
+
+  /* ===== CTA ===== */
+  .cta {
+    text-align: center;
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(0,212,170,0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .cta h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    position: relative;
+    letter-spacing: -0.02em;
+  }
+
+  .cta p {
+    color: var(--text-dim);
+    max-width: 500px;
+    margin: 0 auto 3rem;
+    position: relative;
+    font-size: 1.1rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .cta-btn {
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.4s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    border: 2px solid transparent;
+  }
+
+  .cta-btn.primary {
+    background: linear-gradient(135deg, var(--py), #00B894);
+    color: var(--bg);
+    box-shadow: 0 10px 40px var(--py-glow);
+  }
+
+  .cta-btn.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 60px var(--py-glow);
+  }
+
+  .cta-btn.secondary {
+    background: var(--glass);
+    border-color: var(--border);
+    color: var(--text);
+    backdrop-filter: blur(10px);
+  }
+
+  .cta-btn.secondary:hover {
+    border-color: var(--py);
+    color: var(--py);
+    background: var(--py-glow);
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 4rem 2rem;
+    border-top: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== MYTHS ===== */
+  .myths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .myth-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .myth-card::before {
+    content: '❌';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    opacity: 0.3;
+    transition: all 0.3s;
+  }
+
+  .myth-card:hover::before {
+    content: '✅';
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  .myth-card:hover {
+    border-color: rgba(74, 222, 128, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .myth-card h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #F87171;
+    padding-right: 2rem;
+  }
+
+  .myth-card p {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  .myth-card .truth {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+    color: #4ADE80;
+    font-weight: 500;
+  }
+
+  /* ===== SALARY BAR ===== */
+  .salary-bar {
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .salary-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.75rem 0;
+  }
+
+  .salary-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    min-width: 100px;
+  }
+
+  .salary-track {
+    flex: 1;
+    height: 8px;
+    background: var(--bg);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .salary-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 0;
+  }
+
+  .salary-fill.py { background: linear-gradient(90deg, var(--py), #00B894); }
+  .salary-fill.js { background: linear-gradient(90deg, var(--js), #F59E0B); }
+  .salary-fill.sc { background: linear-gradient(90deg, var(--sc), #EC4899); }
+
+  .salary-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    min-width: 80px;
+    text-align: right;
+  }
+
+  /* ===== QUOTE ===== */
+  .quote-block {
+    border-left: 3px solid;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.8;
+  }
+
+  .quote-block cite {
+    display: block;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    font-style: normal;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+  }
+
+  .py-quote { border-color: var(--py); background: linear-gradient(90deg, var(--py-glow), transparent); }
+  .py-quote cite { color: var(--py); }
+
+  .js-quote { border-color: var(--js); background: linear-gradient(90deg, var(--js-glow), transparent); }
+  .js-quote cite { color: var(--js); }
+
+  .sc-quote { border-color: var(--sc); background: linear-gradient(90deg, var(--sc-glow), transparent); }
+  .sc-quote cite { color: var(--sc); }
+
+  /* ===== SEPARATOR ===== */
+  .sep {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  .sep-line { flex: 1; height: 1px; background: var(--border); }
+  .sep-icon { font-size: 1.2rem; color: var(--text-dim); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .scratch-workspace { grid-template-columns: 1fr; }
+    .nav-langs { top: 1rem; right: 1rem; }
+    .nav-langs a { padding: 0.4rem 0.8rem; font-size: 0.7rem; }
+    .hero-stats { gap: 1rem; }
+    .stat-item { padding: 0.75rem 1rem; }
+    .roadmap::before { left: 19px; }
+    .roadmap-dot { width: 40px; height: 40px; font-size: 0.85rem; }
+    .py-grid { grid-template-columns: 1fr; }
+    .myths-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="particles-canvas"></canvas>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav-langs">
+  <a href="#python" class="py">🐍 Python</a>
+  <a href="#javascript" class="js">⚡ JS</a>
+  <a href="#scratch" class="sc">🎨 Scratch</a>
+  <a href="#compare" class="active">📊 Comparar</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero-badge">
+    <span class="pulse"></span>
+    Guia Definitivo 2026
+  </div>
+  <h1>
+    Existe um <span class="gradient-text">código secreto</span><br>
+    que poucos conhecem.
+  </h1>
+  <p class="hero-sub">
+    Não é um diploma. Não é um gênio. Não é sorte.<br>
+    É a habilidade de conversar com máquinas — e fazer elas fazerem <em>qualquer coisa</em> por você.
+  </p>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <span class="stat-number">27.7M</span>
+      <span class="stat-label">Devs no mundo</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">+16%</span>
+      <span class="stat-label">Crescimento anual</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">$89B+</span>
+      <span class="stat-label">Mercado global</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">45%</span>
+      <span class="stat-label">Autodidatas</span>
+    </div>
+  </div>
+  <div class="scroll-hint" onclick="document.getElementById('myths').scrollIntoView({behavior:'smooth'})">↓</div>
+</header>
+
+<!-- ===== MYTHS ===== -->
+<section id="myths" class="animate-in">
+  <div class="section-header">
+    <p class="section-label" style="color:var(--text-dim)">// mitos que te impedem</p>
+    <h2 class="section-title">As mentiras que te contam<br>sobre programar.</h2>
+  </div>
+  <div class="glass-card" style="margin-bottom:2rem">
+    <p>Antes de mostrar as linguagens, precisamos destruir as desculpas que você usa para não começar. Cada uma dessas crenças é uma prisão. Vamos quebrá-las.</p>
+  </div>
+  <div class="myths-grid">
+    <div class="myth-card">
+      <h4>"Preciso ser bom em matemática"</h4>
+      <p>90% da programação é lógica, organização e criatividade. Só engenheiros de IA usam cálculo avançado.</p>
+      <div class="truth">Verdade: Se você consegue organizar uma lista de compras, consegue programar.</div>
+    </div>
+    <div class="myth-card">
+      <h4>"Sou velho demais para começar"</h4>
+      <p>A média de idade de quem muda para tech é 32 anos. Muitos começam aos 40, 50, 60.</p>
+      <div class="truth">Verdade: Sua experiência de vida é uma vantagem, não um handicap.</div>
+    </div>
+    <div class="myth-card">
+      <h4>"Preciso de um computador caro"</h4>
+      <p>Python roda em um Raspberry Pi. JavaScript roda no navegador do seu celular. Scratch é online.</p>
+      <div class="truth">Verdade: Qualquer máquina feita depois de 2015 é suficiente.</div>
+    </div>
+    <div class="myth-card">
+      <h4>"Vai demorar anos para aprender"</h4>
+      <p>Em 3 meses você já constrói projetos reais. Em 6 meses já pode cobrar por eles. Em 1 ano, muda de carreira.</p>
+      <div class="truth">Verdade: O básico leva semanas, não anos. O resto vem com prática.</div>
+    </div>
+    <div class="myth-card">
+      <h4>"IA vai substituir programadores"</h4>
+      <p>77% dos devs já usam IA (Copilot, ChatGPT) e produzem 55% mais. A IA é um amplificador, não um substituto.</p>
+      <div class="truth">Verdade: Quem sabe programar + usar IA vence. Quem não sabe, perde.</div>
+    </div>
+    <div class="myth-card">
+      <h4>"Preciso de diploma de CS"</h4>
+      <p>Google, Netflix, Spotify e outras gigantes eliminaram o requisito de diploma. 45% dos devs são autodidatas.</p>
+      <div class="truth">Verdade: Seu portfólio vale mais que qualquer diploma.</div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"><div class="sep-line"></div><span class="sep-icon">🐍</span><div class="sep-line"></div></div>
+
+<!-- ===== PYTHON ===== -->
+<section id="python" class="animate-in">
+  <div class="section-header">
+    <p class="section-label">// linguagem #1 do mundo em 2026</p>
+    <h2 class="section-title">🐍 <span>Python</span>: A chave<br>para o futuro.</h2>
+  </div>
+
+  <div class="glass-card" style="border-color:rgba(0,212,170,0.2)">
+    <p>
+      <strong>Python é a linguagem mais popular do mundo em 2026</strong> — com 21.81% no TIOBE Index e o maior salto de adoção da história no Stack Overflow Survey 2025 (+7 pontos percentuais em um ano).
+    </p>
+    <p>
+      Criado em 1991 por Guido van Rossum com a filosofia de que <em>"código é lido muito mais do que escrito"</em>, Python foi desenhado para ser a linguagem mais humana possível. Enquanto outras linguagens exigem que você memorize regras de sintaxe complexas, <strong>em Python você está produzindo código real em minutos</strong>.
+    </p>
+    <p>
+      O segredo? <strong>Python é a língua franca da Inteligência Artificial</strong>. TensorFlow, PyTorch, scikit-learn — todas são Python. Quando você aprende Python, não está apenas aprendendo a programar. Está aprendendo a linguagem do futuro.
+    </p>
+  </div>
+
+  <div class="demo-container">
+    <div class="code-header">
+      <span class="code-dot red"></span>
+      <span class="code-dot yel"></span>
+      <span class="code-dot grn"></span>
+      <span class="code-title">meu_primeiro_programa.py</span>
+    </div>
+    <div class="code-block">
+<span class="cmt"># 🐍 Python: Seu primeiro programa — uma linha só:</span>
+<span class="fn">print</span>(<span class="str">"Olá, Mundo! Eu sei programar agora 🚀"</span>)
+
+<span class="cmt"># 🤖 IA em 5 linhas: Análise de sentimento com scikit-learn</span>
+<span class="kw">from</span> sklearn.feature_extraction.text <span class="kw">import</span> CountVectorizer
+<span class="kw">from</span> sklearn.naive_bayes <span class="kw">import</span> MultinomialNB
+
+<span class="var">modelo</span> = <span class="cls">MultinomialNB</span>()
+<span class="var">textos</span> = [<span class="str">"amei o produto"</span>, <span class="str">"odiei a espera"</span>, <span class="str">"incrível!"</span>]
+<span class="var">sentimentos</span> = [<span class="str">"positivo"</span>, <span class="str">"negativo"</span>, <span class="str">"positivo"</span>]
+
+<span class="var">vetor</span> = <span class="cls">CountVectorizer</span>()
+<span class="var">X</span> = <span class="var">vetor</span>.<span class="fn">fit_transform</span>(<span class="var">textos</span>)
+<span class="var">modelo</span>.<span class="fn">fit</span>(<span class="var">X</span>, <span class="var">sentimentos</span>)
+
+<span class="var">novo</span> = <span class="var">vetor</span>.<span class="fn">transform</span>([<span class="str">"adorei a experiência"</span>])
+<span class="fn">print</span>(<span class="var">modelo</span>.<span class="fn">predict</span>(<span class="var">novo</span>))  <span class="cmt"># → ['positivo'] ✅</span>
+
+<span class="cmt"># 📊 Análise de dados em 3 linhas:</span>
+<span class="kw">import</span> pandas <span class="kw">as</span> pd
+<span class="var">dados</span> = <span class="cls">pd</span>.<span class="fn">read_csv</span>(<span class="str">"vendas.csv"</span>)
+<span class="fn">print</span>(<span class="var">dados</span>.<span class="fn">groupby</span>(<span class="str">"produto"</span>)[<span class="str">"valor"</span>].<span class="fn">sum</span>())
+    </div>
+    <p style="color:var(--text-dim);font-size:0.85rem;text-align:center;margin-top:-1rem;margin-bottom:1rem">
+      ↑ Isso é código Python <em>real</em> que funciona. Você consegue ler quase como português, não é?
+    </p>
+
+    <div class="demo-tabs">
+      <button class="demo-tab active" onclick="runDemo('hello')">👋 Olá, Mundo</button>
+      <button class="demo-tab" onclick="runDemo('calculator')">🧮 Calculadora</button>
+      <button class="demo-tab" onclick="runDemo('ai')">🤖 Mini IA</button>
+      <button class="demo-tab" onclick="runDemo('data')">📊 Análise</button>
+    </div>
+    <div class="demo-output" id="pyDemoOutput">👋 Olá, Mundo! Eu sei programar agora 🚀
+
+>>> _</div>
+    <button class="demo-run-btn" onclick="runCurrentDemo()">
+      <span>▶</span> Executar Código
+    </button>
+  </div>
+
+  <div class="py-grid">
+    <div class="py-card">
+      <span class="icon">🤖</span>
+      <h3>Inteligência Artificial</h3>
+      <p>Python domina 100% do ecossistema de ML/IA. TensorFlow, PyTorch, scikit-learn — crie chatbots, reconhecimento facial e previsões.</p>
+    </div>
+    <div class="py-card">
+      <span class="icon">📊</span>
+      <h3>Ciência de Dados</h3>
+      <p>Analise milhões de linhas em segundos com pandas. Crie gráficos interativos com matplotlib. Descubra padrões invisíveis.</p>
+    </div>
+    <div class="py-card">
+      <span class="icon">🌐</span>
+      <h3>Web & APIs</h3>
+      <p>Django e Flask permitem criar sites completos em dias. APIs RESTful, sistemas de login, pagamentos — tudo em Python.</p>
+    </div>
+    <div class="py-card">
+      <span class="icon">⚙️</span>
+      <h3>Automação</h3>
+      <p>Organize 10.000 arquivos em 2 segundos. Preencha formulários automaticamente. Envie 500 e-mails personalizados de uma vez.</p>
+    </div>
+    <div class="py-card">
+      <span class="icon">🎮</span>
+      <h3>Games & Jogos</h3>
+      <p>Pygame, Panda3D, Arcade — crie jogos 2D e 3D. Minecraft foi modificado em Python. Roblox usa Lua (primo do Python).</p>
+    </div>
+    <div class="py-card">
+      <span class="icon">🧬</span>
+      <h3>Ciências & Pesquisa</h3>
+      <p>NASA, CERN, SpaceX — todos usam Python. Análise de DNA, previsão de clima, simulação de galáxias. A ciência fala Python.</p>
+    </div>
+  </div>
+
+  <div class="quote-block py-quote">
+    <p>"Python é a primeira linguagem que parece que foi feita para humanos, não para computadores. Em 2026, aprender Python não é opcional — é como aprender inglês no século XXI."</p>
+    <cite>— Stack Overflow Developer Survey 2025 · 51.2% dos devs usam Python</cite>
+  </div>
+
+  <div class="glass-card" style="border-color:rgba(0,212,170,0.15); margin-top:2rem">
+    <p style="margin-bottom:1rem"><strong>💰 Quanto ganha um Python Dev em 2026?</strong></p>
+    <div class="salary-bar">
+      <div class="salary-row">
+        <span class="salary-label">Júnior</span>
+        <div class="salary-track"><div class="salary-fill py" data-width="35%"></div></div>
+        <span class="salary-value" style="color:var(--py)">R$ 4-6K</span>
+      </div>
+      <div class="salary-row">
+        <span class="salary-label">Pleno</span>
+        <div class="salary-track"><div class="salary-fill py" data-width="60%"></div></div>
+        <span class="salary-value" style="color:var(--py)">R$ 8-15K</span>
+      </div>
+      <div class="salary-row">
+        <span class="salary-label">Sênior</span>
+        <div class="salary-track"><div class="salary-fill py" data-width="85%"></div></div>
+        <span class="salary-value" style="color:var(--py)">R$ 18-35K</span>
+      </div>
+      <div class="salary-row">
+        <span class="salary-label">IA/ML</span>
+        <div class="salary-track"><div class="salary-fill py" data-width="100%"></div></div>
+        <span class="salary-value" style="color:var(--py)">R$ 25-60K</span>
+      </div>
+    </div>
+    <p style="font-size:0.85rem;color:var(--text-dim);margin-top:0.5rem">
+      Fonte: Glassdoor 2026 · Dados convertidos para BRL · Especialistas em IA ganham 25-35% a mais
+    </p>
+  </div>
+</section>
+
+<div class="sep"><div class="sep-line"></div><span class="sep-icon">⚡</span><div class="sep-line"></div></div>
+
+<!-- ===== JAVASCRIPT ===== -->
+<section id="javascript" class="animate-in">
+  <div class="inner">
+    <div class="section-header">
+      <p class="section-label">// a linguagem que alimenta a internet</p>
+      <h2 class="section-title">⚡ <span>JavaScript</span>: Faça a web<br>ganhar vida.</h2>
+    </div>
+
+    <div class="glass-card" style="border-color:rgba(247,223,30,0.15); background:rgba(247,223,30,0.02)">
+      <p>
+        <strong>98.9% dos websites do mundo usam JavaScript</strong> — isso significa 51 milhões de sites. É a única linguagem que roda nativamente em <em>todos</em> os navegadores sem instalar nada. Abriu o Chrome? JavaScript já está lá, esperando por você.
+      </p>
+      <p>
+        Criada em apenas <strong>10 dias</strong> em 1995 por Brendan Eich, JavaScript evoluiu de um script para validar formulários para a <strong>linguagem mais usada do mundo por 12 anos consecutivos</strong> — 66% dos desenvolvedores profissionais a usam diariamente.
+      </p>
+      <p>
+        Mas aqui está o plot twist de 2026: <strong>TypeScript (o super-JavaScript) acaba de ultrapassar Python no GitHub</strong> em número de contribuidores — o maior shift linguístico em mais de uma década. Aprender JavaScript hoje significa aprender a linguagem do presente <em>e</em> do futuro.
+      </p>
+    </div>
+
+    <div class="demo-container">
+      <div class="code-header">
+        <span class="code-dot red"></span>
+        <span class="code-dot yel"></span>
+        <span class="code-dot grn"></span>
+        <span class="code-title">interativo.js</span>
+      </div>
+      <div class="code-block js-code">
+<span class="cmt">// ⚡ JavaScript: O resultado é INSTANTÂNEO no navegador</span>
+
+<span class="cmt">// 🎯 Mude o título da página com uma linha:</span>
+<span class="var">document</span>.<span class="var">title</span> = <span class="str">"Eu controlei esta página! 🚀"</span>;
+
+<span class="cmt">// 🎮 Crie um jogo de cliques em segundos:</span>
+<span class="kw">let</span> <span class="var">pontos</span> = <span class="num">0</span>;
+<span class="var">document</span>.<span class="fn">addEventListener</span>(<span class="str">"click"</span>, () => {
+  <span class="var">pontos</span>++;
+  <span class="var">document</span>.<span class="var">body</span>.<span class="var">style</span>.<span class="var">background</span> = 
+    <span class="str">`hsl(${</span><span class="var">pontos</span> * <span class="num">10</span><span class="str">}, 70%, 10%)`</span>;
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">`Pontos: ${</span><span class="var">pontos</span><span class="str">} 🎉`</span>);
+});
+
+<span class="cmt">// 🌐 Busque dados de qualquer API do mundo:</span>
+<span class="kw">async function</span> <span class="fn">buscarUsuario</span>(<span class="var">id</span>) {
+  <span class="kw">const</span> <span class="var">resposta</span> = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">`https://api.github.com/users/${</span><span class="var">id</span><span class="str">}`</span>);
+  <span class="kw">const</span> <span class="var">dados</span> = <span class="kw">await</span> <span class="var">resposta</span>.<span class="fn">json</span>();
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">`${</span><span class="var">dados</span>.<span class="var">name</span><span class="str">} tem ${</span><span class="var">dados</span>.<span class="var">public_repos</span><span class="str">} repositórios!`</span>);
+}
+
+<span class="cmt">// 📱 Crie um app mobile com React Native:</span>
+<span class="kw">import</span> { <span class="cls">View</span>, <span class="cls">Text</span>, <span class="cls">Button</span> } <span class="kw">from</span> <span class="str">"react-native"</span>;
+
+<span class="kw">export default function</span> <span class="fn">App</span>() {
+  <span class="kw">return</span> (
+    &lt;<span class="cls">View</span>&gt;
+      &lt;<span class="cls">Text</span>&gt;Meu primeiro app! 📱&lt;/<span class="cls">Text</span>&gt;
+      &lt;<span class="cls">Button</span> <span class="var">title</span>=<span class="str">"Clique aqui"</span> /&gt;
+    &lt;/<span class="cls">View</span>&gt;
+  );
+}
+      </div>
+      <p style="color:var(--text-dim);font-size:0.85rem;text-align:center;margin-top:-1rem;margin-bottom:1rem">
+        ↑ Copie qualquer desses códigos, cole no console do navegador (F12) e veja acontecer. <em>Instantâneo.</em>
+      </p>
+    </div>
+
+    <ul class="js-feature-list">
+      <li>
+        <span class="bullet">01</span>
+        <div>
+          <h4>Resultado Imediato, Sem Instalação</h4>
+          <p>Aperte F12 no navegador e já está programando. 0 configuração. 0 espera. O feedback é instantâneo — você vê o resultado em tempo real. É como ter um laboratório de programação aberto 24h.</p>
+        </div>
+      </li>
+      <li>
+        <span class="bullet">02</span>
+        <div>
+          <h4>Você Cria Coisas que as Pessoas USAM</h4>
+          <p>Menus animados, jogos no navegador, dashboards interativos, efeitos de scroll — JavaScript cria coisas visíveis e tangíveis. Isso mantém a motivação altíssima enquanto você aprende.</p>
+        </div>
+      </li>
+      <li>
+        <span class="bullet">03</span>
+        <div>
+          <h4>Uma Linguagem, Dois Mundos</h4>
+          <p>Com Node.js, o mesmo JavaScript que roda no navegador também roda no servidor. Front-end + Back-end + Mobile + Desktop = uma linguagem para dominar tudo. 97.5% dos devs mobile usam JS.</p>
+        </div>
+      </li>
+      <li>
+        <span class="bullet">04</span>
+        <div>
+          <h4>Ecossistema de 2 Milhões de Bibliotecas</h4>
+          <p>npm tem mais pacotes que qualquer outro registry do mundo. React, Vue, Next.js, Svelte — há um framework para cada tipo de projeto. E tudo é open source e gratuito.</p>
+        </div>
+      </li>
+      <li>
+        <span class="bullet">05</span>
+        <div>
+          <h4>Demanda Insana no Mercado</h4>
+          <p>Desenvolvedor JavaScript é a vaga mais requisitada no Brasil e no mundo. 41.5% dos recrutadores procuram JS devs ativamente. Mediana salarial nos EUA: $112.000/ano.</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="quote-block js-quote">
+      <p>"JavaScript está em todo lugar. No seu celular, no seu banco, na sua Netflix. Aprender JS é aprender a falar a língua franca da internet. E em 2026, TypeScript é o futuro do JavaScript."</p>
+      <cite>— GitHub Octoverse 2025 · TypeScript ultrapassou Python em contribuidores pela primeira vez</cite>
+    </div>
+
+    <div class="glass-card" style="border-color:rgba(247,223,30,0.15); background:rgba(247,223,30,0.02); margin-top:2rem">
+      <p style="margin-bottom:1rem"><strong>💰 Quanto ganha um JavaScript Dev em 2026?</strong></p>
+      <div class="salary-bar">
+        <div class="salary-row">
+          <span class="salary-label">Júnior</span>
+          <div class="salary-track"><div class="salary-fill js" data-width="40%"></div></div>
+          <span class="salary-value" style="color:var(--js)">R$ 5-7K</span>
+        </div>
+        <div class="salary-row">
+          <span class="salary-label">Pleno</span>
+          <div class="salary-track"><div class="salary-fill js" data-width="65%"></div></div>
+          <span class="salary-value" style="color:var(--js)">R$ 10-18K</span>
+        </div>
+        <div class="salary-row">
+          <span class="salary-label">Sênior</span>
+          <div class="salary-track"><div class="salary-fill js" data-width="90%"></div></div>
+          <span class="salary-value" style="color:var(--js)">R$ 20-40K</span>
+        </div>
+        <div class="salary-row">
+          <span class="salary-label">Full-Stack</span>
+          <div class="salary-track"><div class="salary-fill js" data-width="100%"></div></div>
+          <span class="salary-value" style="color:var(--js)">R$ 25-50K</span>
+        </div>
+      </div>
+      <p style="font-size:0.85rem;color:var(--text-dim);margin-top:0.5rem">
+        Fonte: Glassdoor 2026 · Upwork 2026 · Desenvolvedores Full-Stack são os mais valorizados do mercado
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="sep"><div class="sep-line"></div><span class="sep-icon">🎨</span><div class="sep-line"></div></div>
+
+<!-- ===== SCRATCH ===== -->
+<section id="scratch" class="animate-in">
+  <div class="section-header">
+    <p class="section-label">// programação visual do MIT</p>
+    <h2 class="section-title">🎨 <span>Scratch</span>: Onde tudo<br>começa com diversão.</h2>
+  </div>
+
+  <div class="glass-card" style="border-color:rgba(255,107,157,0.25); background:rgba(255,107,157,0.03)">
+    <p>
+      O que fazer quando você tem 8 anos — ou quando simplesmente quer entender programação <strong>sem medo</strong>? A resposta criada pelo <strong>MIT (Instituto de Tecnologia de Massachusetts)</strong> é Scratch: uma plataforma gratuita onde você programa arrastando blocos coloridos, como peças de LEGO digital.
+    </p>
+    <p>
+      <strong>Não existe erro de sintaxe em Scratch.</strong> Não existe ponto-e-vírgula faltando, não existe indentação errada. Os blocos se encaixam ou não se encaixam — e quando se encaixam, funcionam. É uma forma genial de ensinar os fundamentos da lógica de programação sem deixar o medo e a frustração atrapalharem.
+    </p>
+    <p>
+      <strong>100 milhões de projetos</strong> já foram criados na plataforma. Jogos, animações, histórias interativas, simulações científicas — tudo feito por crianças, adolescentes e adultos que nunca tinham programado antes.
+    </p>
+  </div>
+
+  <!-- SIMULADOR SCRATCH FUNCIONAL -->
+  <div class="scratch-simulator">
+    <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.3rem;margin-bottom:1.5rem;color:var(--sc)">
+      🧪 Laboratório Scratch — Experimente Agora!
+    </h3>
+    <p style="color:var(--text-dim);font-size:0.9rem;margin-bottom:1.5rem">
+      Clique nos blocos abaixo para adicioná-los ao seu script. Depois aperte ▶️ para ver o gato se mover!
+    </p>
+
+    <div class="scratch-workspace">
+      <div class="scratch-palette">
+        <div class="scratch-palette-title">🟠 Eventos</div>
+        <div class="scratch-block-item orange" onclick="addBlock('event', 'Quando clicar em ⚑')">
+          🚩 Quando clicar em ⚑
+        </div>
+        <div class="scratch-block-item orange" onclick="addBlock('event', 'Quando pressionar [espaço]')">
+          ⌨️ Quando pressionar espaço
+        </div>
+
+        <div class="scratch-palette-title">🔵 Movimento</div>
+        <div class="scratch-block-item blue" onclick="addBlock('move', 'Mova 10 passos')">
+          ➡️ Mova 10 passos
+        </div>
+        <div class="scratch-block-item blue" onclick="addBlock('move', 'Gire 15° para direita')">
+          ↻ Gire 15° para direita
+        </div>
+        <div class="scratch-block-item blue" onclick="addBlock('move', 'Vá para x: 0 y: 0')">
+          📍 Vá para x: 0 y: 0
+        </div>
+        <div class="scratch-block-item blue" onclick="addBlock('move', 'Mude x por 10')">
+          ↔️ Mude x por 10
+        </div>
+
+        <div class="scratch-palette-title">🟢 Aparência</div>
+        <div class="scratch-block-item green" onclick="addBlock('look', 'Diga "Olá!" por 2s')">
+          💬 Diga "Olá!" por 2s
+        </div>
+        <div class="scratch-block-item green" onclick="addBlock('look', 'Mude tamanho por 10')">
+          🔍 Mude tamanho por 10
+        </div>
+        <div class="scratch-block-item green" onclick="addBlock('look', 'Mude cor por 25')">
+          🎨 Mude cor por 25
+        </div>
+
+        <div class="scratch-palette-title">🟣 Controle</div>
+        <div class="scratch-block-item purple" onclick="addBlock('control', 'Espere 1 segundo')">
+          ⏱️ Espere 1 segundo
+        </div>
+        <div class="scratch-block-item purple" onclick="addBlock('control', 'Repita 10 vezes')">
+          🔁 Repita 10 vezes
+        </div>
+        <div class="scratch-block-item purple" onclick="addBlock('control', 'Se <tocando na borda> então')">
+          ❓ Se tocar na borda então
+        </div>
+
+        <div class="scratch-palette-title">🩷 Som</div>
+        <div class="scratch-block-item pink" onclick="addBlock('sound', 'Toque som "miado"')">
+          🔊 Toque som "miado"
+        </div>
+      </div>
+
+      <div class="scratch-canvas-area">
+        <div class="scratch-canvas-header">
+          <span>🐱 Palco</span>
+          <span id="stageCoords">x: 0 | y: 0 | dir: 90°</span>
+        </div>
+        <canvas id="scratchCanvas" width="600" height="400"></canvas>
+        <div class="scratch-controls">
+          <button class="scratch-btn primary" onclick="runScratchScript()">
+            <span>▶️</span> Executar
+          </button>
+          <button class="scratch-btn" onclick="resetScratch()">
+            <span>🔄</span> Resetar
+          </button>
+          <button class="scratch-btn" onclick="clearScript()">
+            <span>🗑️</span> Limpar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="scratch-script-area" id="scriptArea">
+      <div style="text-align:center;opacity:0.5;padding:2rem">
+        👆 Clique nos blocos coloridos à esquerda para montar seu programa!
+      </div>
+    </div>
+  </div>
+
+  <div class="py-grid" style="margin-top:2rem">
+    <div class="py-card" style="border-color:rgba(255,107,157,0.2);background:linear-gradient(135deg,rgba(255,107,157,0.05) 0%,transparent 100%)">
+      <span class="icon">🧩</span>
+      <h3 style="color:var(--sc)">Blocos Visuais</h3>
+      <p>Sem digitar código. Arraste, encaixe e veja acontecer. Erros de sintaxe são impossíveis de cometer.</p>
+    </div>
+    <div class="py-card" style="border-color:rgba(255,107,157,0.2);background:linear-gradient(135deg,rgba(255,107,157,0.05) 0%,transparent 100%)">
+      <span class="icon">🎮</span>
+      <h3 style="color:var(--sc)">Crie Jogos em Minutos</h3>
+      <p>Personagens se movendo, histórias interativas, músicas e efeitos — tudo com cliques. Seu primeiro jogo em 20 minutos.</p>
+    </div>
+    <div class="py-card" style="border-color:rgba(255,107,157,0.2);background:linear-gradient(135deg,rgba(255,107,157,0.05) 0%,transparent 100%)">
+      <span class="icon">🌍</span>
+      <h3 style="color:var(--sc)">Comunidade Global</h3>
+      <p>Mais de 100 milhões de projetos criados. Compartilhe o seu e remixe o de outros. Aprenda com a comunidade.</p>
+    </div>
+    <div class="py-card" style="border-color:rgba(255,107,157,0.2);background:linear-gradient(135deg,rgba(255,107,157,0.05) 0%,transparent 100%)">
+      <span class="icon">🧠</span>
+      <h3 style="color:var(--sc)">Lógica Real</h3>
+      <p>Loops, condicionais, variáveis, eventos — todos os conceitos que você vai usar em Python e JavaScript depois.</p>
+    </div>
+  </div>
+
+  <div class="glass-card" style="border-color:rgba(76,151,255,0.25); background:rgba(76,151,255,0.03); margin-top:2rem">
+    <p>
+      <strong>Scratch não é "coisa de criança"</strong> — é uma ferramenta pedagógica reconhecida por universidades do mundo inteiro como a forma mais eficiente de introduzir pensamento computacional. Professores, educadores e adultos sem experiência alguma usam Scratch para entender os conceitos antes de mergulhar em linguagens de texto.
+    </p>
+    <p>
+      O mais fascinante é que os conceitos que você aprende em Scratch são <em>exatamente os mesmos</em> que você vai usar em Python e JavaScript depois. Um <strong>"Repita 10 vezes"</strong> em Scratch é um <code style="background:rgba(0,212,170,0.1);color:var(--py);padding:0.1rem 0.4rem;border-radius:4px">for i in range(10):</code> em Python. Um <strong>"Se tocar na borda, volte"</strong> é um <code style="background:rgba(247,223,30,0.1);color:var(--js);padding:0.1rem 0.4rem;border-radius:4px">if (x > largura)</code> em JavaScript.
+    </p>
+    <p>
+      A lógica é universal — só a "sotaque" muda.
+    </p>
+  </div>
+
+  <div class="quote-block sc-quote">
+    <p>"Scratch ensina as crianças a pensar criativamente, raciocinar sistematicamente e trabalhar colaborativamente — habilidades essenciais para o século XXI."</p>
+    <cite>— Mitchel Resnick, criador do Scratch, MIT Media Lab</cite>
+  </div>
+</section>
+
+<div class="sep"><div class="sep-line"></div><span class="sep-icon">📊</span><div class="sep-line"></div></div>
+
+<!-- ===== COMPARISON ===== -->
+<section id="compare" class="compare-section animate-in">
+  <div class="section-header">
+    <p class="section-label" style="color:var(--text-dim)">// escolha seu caminho</p>
+    <h2 class="section-title">Qual é o certo<br>para mim?</h2>
+  </div>
+
+  <div class="glass-card" style="margin-bottom:2rem">
+    <p>Não existe resposta errada. Mas esta tabela pode ajudar a escolher seu primeiro passo baseado em dados reais de 2026:</p>
+  </div>
+
+  <div class="compare-table-wrapper">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Critério</th>
+          <th>🐍 Python</th>
+          <th>⚡ JavaScript</th>
+          <th>🎨 Scratch</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Facilidade para iniciantes</strong></td>
+          <td><span class="score"><span class="star">★★★★★</span></span></td>
+          <td><span class="score"><span class="star">★★★★</span><span class="empty">☆</span></span></td>
+          <td><span class="score"><span class="star">★★★★★</span></span></td>
+        </tr>
+        <tr>
+          <td><strong>Resultado visual imediato</strong></td>
+          <td><span class="score"><span class="star">★★★</span><span class="empty">☆☆</span></span></td>
+          <td><span class="score"><span class="star">★★★★★</span></span></td>
+          <td><span class="score"><span class="star">★★★★★</span></span></td>
+        </tr>
+        <tr>
+          <td><strong>Demanda no mercado 2026</strong></td>
+          <td><span class="score"><span class="star">★★★★★</span></span> (51.2%)</td>
+          <td><span class="score"><span class="star">★★★★★</span></span> (65.6%)</td>
+          <td><span class="score"><span class="empty">—</span></span> Educação</td>
+        </tr>
+        <tr>
+          <td><strong>Ideal para crianças</strong></td>
+          <td><span class="score"><span class="star">★★★</span><span class="empty">☆☆</span></span></td>
+          <td><span class="score"><span class="star">★★</span><span class="empty">☆☆☆</span></span></td>
+          <td><span class="score"><span class="star">★★★★★</span></span></td>
+        </tr>
+        <tr>
+          <td><strong>Instalação necessária</strong></td>
+          <td>Simples (python.org)</td>
+          <td><strong>Nenhuma</strong> (navegador)</td>
+          <td><strong>Nenhuma</strong> (scratch.mit.edu)</td>
+        </tr>
+        <tr>
+          <td><strong>Curva de aprendizado</strong></td>
+          <td>Suave</td>
+          <td>Moderada</td>
+          <td>Mínima</td>
+        </tr>
+        <tr>
+          <td><strong>Onde brilha em 2026</strong></td>
+          <td>IA, Dados, Automação</td>
+          <td>Web, Apps, Full-Stack</td>
+          <td>Lógica, Games, Educação</td>
+        </tr>
+        <tr>
+          <td><strong>Salário médio (BRL)</strong></td>
+          <td>R$ 8-35K</td>
+          <td>R$ 10-40K</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><strong>Comunidade PT-BR</strong></td>
+          <td><span class="score"><span class="star">★★★★★</span></span></td>
+          <td><span class="score"><span class="star">★★★★★</span></span></td>
+          <td><span class="score"><span class="star">★★★★</span><span class="empty">☆</span></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="glass-card" style="margin-top:2rem">
+    <p>
+      <strong>Minha recomendação:</strong> Se você tem entre 7 e 12 anos (ou quer aprender sem pressão alguma), comece pelo <span style="color:var(--sc);font-weight:600">Scratch</span>. Se você quer uma carreira em tecnologia, ciência de dados ou IA, comece pelo <span style="color:var(--py);font-weight:600">Python</span>. Se você quer ver resultados na web rápido e se empolgar com o que está criando, comece pelo <span style="color:var(--js);font-weight:600">JavaScript</span>.
+    </p>
+    <p style="margin-top:1rem">
+      E o segredo que ninguém conta: <strong style="color:var(--text)">não importa por qual você começa</strong>. Quem aprende uma, aprende as outras muito mais rápido. A lógica de programação é a mesma — só a "sotaque" muda. Escolha a que mais te empolgar e vá fundo.
+    </p>
+  </div>
+</section>
+
+<div class="sep"><div class="sep-line"></div><span class="sep-icon">🗺️</span><div class="sep-line"></div></div>
+
+<!-- ===== ROADMAP ===== -->
+<section class="animate-in">
+  <div class="section-header">
+    <p class="section-label" style="color:var(--text-dim)">// seu mapa de 30 dias</p>
+    <h2 class="section-title">O caminho do zero<br>ao primeiro projeto.</h2>
+  </div>
+
+  <div class="glass-card" style="margin-bottom:2rem">
+    <p>Não fique paralisado por "por onde começo?". Aqui está um roadmap concreto de 30 dias que leva você do absoluto zero ao seu primeiro projeto funcional:</p>
+  </div>
+
+  <div class="roadmap">
+    <div class="roadmap-step">
+      <div class="roadmap-dot">1</div>
+      <div class="roadmap-content">
+        <h4>Dias 1-3: Instale e diga "Olá"</h4>
+        <p>Instale Python (python.org) ou abra o console do navegador (F12). Execute seu primeiro "Olá, Mundo!". Sinta a dopamina de fazer uma máquina obedecer você.</p>
+      </div>
+    </div>
+    <div class="roadmap-step">
+      <div class="roadmap-dot">2</div>
+      <div class="roadmap-content">
+        <h4>Dias 4-7: Variáveis e Lógica</h4>
+        <p>Aprenda variáveis, if/else, loops. Crie uma calculadora, um conversor de temperatura, um jogo de adivinhar o número. Pequenas vitórias diárias.</p>
+      </div>
+    </div>
+    <div class="roadmap-step">
+      <div class="roadmap-dot">3</div>
+      <div class="roadmap-content">
+        <h4>Dias 8-14: Listas e Funções</h4>
+        <p>Domine listas, dicionários, funções. Crie uma lista de tarefas, um organizador de contatos, um gerador de senhas. Seus programas começam a ter utilidade real.</p>
+      </div>
+    </div>
+    <div class="roadmap-step">
+      <div class="roadmap-dot">4</div>
+      <div class="roadmap-content">
+        <h4>Dias 15-21: Projeto Real</h4>
+        <p>Escolha um projeto que te empolga: um bot de Telegram, um scraper de preços, um dashboard de dados. Use bibliotecas reais. Sinta o poder.</p>
+      </div>
+    </div>
+    <div class="roadmap-step">
+      <div class="roadmap-dot">5</div>
+      <div class="roadmap-content">
+        <h4>Dias 22-30: Compartilhe e Evolua</h4>
+        <p>Publique no GitHub. Mostre para alguém. Peça feedback. Corrija bugs. Você não é mais um iniciante — é um desenvolvedor em formação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<div class="cta">
+  <h2>O momento é <span style="color:var(--py)">agora</span>.<br>Não amanhã.</h2>
+  <p>
+    O melhor momento para começar a programar foi há 10 anos.<br>
+    O segundo melhor momento é este exato segundo.
+  </p>
+
+  <div class="cta-buttons">
+    <a href="https://python.org" target="_blank" class="cta-btn primary">
+      <span>🐍</span> Começar com Python
+    </a>
+    <a href="https://developer.mozilla.org" target="_blank" class="cta-btn secondary">
+      <span>⚡</span> Explorar JavaScript
+    </a>
+    <a href="https://scratch.mit.edu" target="_blank" class="cta-btn secondary">
+      <span>🎨</span> Brincar no Scratch
+    </a>
+  </div>
+
+  <div style="margin-top:3rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+    <div style="background:var(--surface);border:1px solid rgba(0,212,170,0.2);border-radius:12px;padding:1rem 1.5rem;text-align:center;transition:all 0.3s" onmouseover="this.style.borderColor='var(--py)'" onmouseout="this.style.borderColor='rgba(0,212,170,0.2)'">
+      <div style="font-size:2rem;margin-bottom:0.5rem">🐍</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--py)">python.org</div>
+      <div style="font-size:0.75rem;color:var(--text-dim);margin-top:0.25rem">Download gratuito</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid rgba(247,223,30,0.2);border-radius:12px;padding:1rem 1.5rem;text-align:center;transition:all 0.3s" onmouseover="this.style.borderColor='var(--js)'" onmouseout="this.style.borderColor='rgba(247,223,30,0.2)'">
+      <div style="font-size:2rem;margin-bottom:0.5rem">⚡</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--js)">developer.mozilla.org</div>
+      <div style="font-size:0.75rem;color:var(--text-dim);margin-top:0.25rem">Documentação oficial</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid rgba(255,107,157,0.2);border-radius:12px;padding:1rem 1.5rem;text-align:center;transition:all 0.3s" onmouseover="this.style.borderColor='var(--sc)'" onmouseout="this.style.borderColor='rgba(255,107,157,0.2)'">
+      <div style="font-size:2rem;margin-bottom:0.5rem">🎨</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--sc)">scratch.mit.edu</div>
+      <div style="font-size:0.75rem;color:var(--text-dim);margin-top:0.25rem">100% online e gratuito</div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>
+    // feito para quem quer começar · 2026 · 
+    <span style="color:rgba(255,255,255,0.3)">a jornada de mil linhas começa com uma</span>
+  </p>
+  <p style="margin-top:0.5rem;font-size:0.7rem">
+    Dados: Stack Overflow Survey 2025 · GitHub Octoverse 2025 · TIOBE Index 2026 · Glassdoor 2026 · Upwork 2026
+  </p>
+</footer>
+
+
+<!-- ===== JAVASCRIPT INTERATIVO ===== -->
+<script>
+// ===== PARTICLES =====
+const canvas = document.getElementById('particles-canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let mouseX = 0, mouseY = 0;
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+class Particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 2 + 0.5;
+    this.speedX = (Math.random() - 0.5) * 0.5;
+    this.speedY = (Math.random() - 0.5) * 0.5;
+    this.opacity = Math.random() * 0.5 + 0.2;
+    this.color = ['#00D4AA', '#F7DF1E', '#FF6B9D'][Math.floor(Math.random() * 3)];
+  }
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+
+    // Mouse interaction
+    const dx = mouseX - this.x;
+    const dy = mouseY - this.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    if (dist < 150) {
+      this.x -= dx * 0.01;
+      this.y -= dy * 0.01;
+    }
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = this.color;
+    ctx.globalAlpha = this.opacity;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+  }
+}
+
+for (let i = 0; i < 80; i++) {
+  particles.push(new Particle());
+}
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    p.update();
+    p.draw();
+  });
+
+  // Draw connections
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 100) {
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = particles[i].color;
+        ctx.globalAlpha = (1 - dist / 100) * 0.15;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+      }
+    }
+  }
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+window.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+// ===== SCROLL ANIMATIONS =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+
+      // Animate salary bars
+      const bars = entry.target.querySelectorAll('.salary-fill');
+      bars.forEach(bar => {
+        const width = bar.getAttribute('data-width');
+        setTimeout(() => { bar.style.width = width; }, 300);
+      });
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+
+// ===== PYTHON DEMO =====
+const demos = {
+  hello: `👋 Olá, Mundo! Eu sei programar agora 🚀
+
+>>> print("Olá, Mundo!")
+Olá, Mundo!
+>>> _`,
+
+  calculator: `🧮 Calculadora Inteligente
+
+>>> def calcular_media(notas):
+...     return sum(notas) / len(notas)
+... 
+>>> notas = [8.5, 7.0, 9.2, 6.8]
+>>> media = calcular_media(notas)
+>>> print(f"Média: {media:.1f}")
+Média: 7.9
+
+>>> # Bônus: aprovado ou reprovado?
+>>> print("Aprovado! 🎉" if media >= 7 else "Recuperação 😅")
+Aprovado! 🎉
+>>> _`,
+
+  ai: `🤖 Mini Inteligência Artificial
+
+>>> from sklearn.naive_bayes import MultinomialNB
+>>> from sklearn.feature_extraction.text import CountVectorizer
+>>> 
+>>> textos = ["amei o produto", "odiei a espera", "incrível!", "péssimo atendimento"]
+>>> sentimentos = ["positivo", "negativo", "positivo", "negativo"]
+>>> 
+>>> vetor = CountVectorizer()
+>>> X = vetor.fit_transform(textos)
+>>> modelo = MultinomialNB()
+>>> modelo.fit(X, sentimentos)
+
+>>> # Testando com texto novo:
+>>> novo = vetor.transform(["adorei a experiência"])
+>>> print(modelo.predict(novo))
+['positivo'] ✅
+
+>>> novo2 = vetor.transform(["demora demais"])
+>>> print(modelo.predict(novo2))
+['negativo'] ⚠️
+>>> _`,
+
+  data: `📊 Análise de Dados com Pandas
+
+>>> import pandas as pd
+>>> 
+>>> # Criando um dataset de vendas:
+>>> dados = {
+...     'produto': ['Notebook', 'Mouse', 'Notebook', 'Teclado', 'Mouse'],
+...     'valor': [3500, 89, 3500, 249, 89],
+...     'quantidade': [2, 5, 1, 3, 2]
+... }
+>>> df = pd.DataFrame(dados)
+>>> 
+>>> # Análise em segundos:
+>>> print(df.groupby('produto')['valor'].sum())
+produto
+Mouse        623
+Notebook    10500
+Teclado      747
+Name: valor, dtype: int64
+
+>>> print(f"Total de vendas: R$ {df['valor'].sum():,}")
+Total de vendas: R$ 11,870 💰
+>>> _`
+};
+
+let currentDemo = 'hello';
+
+function runDemo(name) {
+  currentDemo = name;
+  document.querySelectorAll('.demo-tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+
+  const output = document.getElementById('pyDemoOutput');
+  output.textContent = '';
+  typeWriter(demos[name], output);
+}
+
+function runCurrentDemo() {
+  const output = document.getElementById('pyDemoOutput');
+  output.textContent = '';
+  typeWriter(demos[currentDemo], output);
+}
+
+function typeWriter(text, element) {
+  let i = 0;
+  element.textContent = '';
+  const speed = 15;
+
+  function type() {
+    if (i < text.length) {
+      element.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+  type();
+}
+
+// ===== SCRATCH SIMULATOR =====
+let scratchScript = [];
+let catX = 300, catY = 200, catDir = 90, catSize = 1, catColor = 0;
+let isRunning = false;
+
+const scratchCanvas = document.getElementById('scratchCanvas');
+const sCtx = scratchCanvas.getContext('2d');
+
+function drawCat() {
+  sCtx.clearRect(0, 0, 600, 400);
+
+  // Background grid
+  sCtx.strokeStyle = 'rgba(255,255,255,0.05)';
+  sCtx.lineWidth = 1;
+  for (let i = 0; i < 600; i += 40) {
+    sCtx.beginPath(); sCtx.moveTo(i, 0); sCtx.lineTo(i, 400); sCtx.stroke();
+  }
+  for (let i = 0; i < 400; i += 40) {
+    sCtx.beginPath(); sCtx.moveTo(0, i); sCtx.lineTo(600, i); sCtx.stroke();
+  }
+
+  // Cat body
+  sCtx.save();
+  sCtx.translate(catX, catY);
+  sCtx.rotate((catDir - 90) * Math.PI / 180);
+  sCtx.scale(catSize, catSize);
+
+  // Color effect
+  sCtx.filter = `hue-rotate(${catColor}deg)`;
+
+  // Body
+  sCtx.fillStyle = '#FF9955';
+  sCtx.beginPath();
+  sCtx.ellipse(0, 0, 30, 25, 0, 0, Math.PI * 2);
+  sCtx.fill();
+
+  // Head
+  sCtx.beginPath();
+  sCtx.arc(0, -20, 20, 0, Math.PI * 2);
+  sCtx.fill();
+
+  // Ears
+  sCtx.beginPath();
+  sCtx.moveTo(-15, -30); sCtx.lineTo(-20, -45); sCtx.lineTo(-5, -35);
+  sCtx.fill();
+  sCtx.beginPath();
+  sCtx.moveTo(15, -30); sCtx.lineTo(20, -45); sCtx.lineTo(5, -35);
+  sCtx.fill();
+
+  // Eyes
+  sCtx.fillStyle = '#FFF';
+  sCtx.beginPath(); sCtx.arc(-8, -22, 6, 0, Math.PI * 2); sCtx.fill();
+  sCtx.beginPath(); sCtx.arc(8, -22, 6, 0, Math.PI * 2); sCtx.fill();
+  sCtx.fillStyle = '#333';
+  sCtx.beginPath(); sCtx.arc(-8, -22, 3, 0, Math.PI * 2); sCtx.fill();
+  sCtx.beginPath(); sCtx.arc(8, -22, 3, 0, Math.PI * 2); sCtx.fill();
+
+  // Nose & mouth
+  sCtx.fillStyle = '#FF8888';
+  sCtx.beginPath(); sCtx.arc(0, -15, 3, 0, Math.PI * 2); sCtx.fill();
+  sCtx.strokeStyle = '#333';
+  sCtx.lineWidth = 1.5;
+  sCtx.beginPath(); sCtx.arc(-5, -10, 5, 0, Math.PI); sCtx.stroke();
+  sCtx.beginPath(); sCtx.arc(5, -10, 5, 0, Math.PI); sCtx.stroke();
+
+  // Tail
+  sCtx.strokeStyle = '#FF9955';
+  sCtx.lineWidth = 6;
+  sCtx.beginPath();
+  sCtx.moveTo(25, 5);
+  sCtx.quadraticCurveTo(45, -10, 40, -25);
+  sCtx.stroke();
+
+  sCtx.restore();
+
+  // Update coords display
+  document.getElementById('stageCoords').textContent = 
+    `x: ${Math.round(catX)} | y: ${Math.round(catY)} | dir: ${catDir}°`;
+}
+
+drawCat();
+
+function addBlock(type, text) {
+  scratchScript.push({ type, text });
+  updateScriptArea();
+}
+
+function updateScriptArea() {
+  const area = document.getElementById('scriptArea');
+  if (scratchScript.length === 0) {
+    area.innerHTML = '<div style="text-align:center;opacity:0.5;padding:2rem">👆 Clique nos blocos coloridos à esquerda para montar seu programa!</div>';
+    return;
+  }
+
+  let html = '';
+  scratchScript.forEach((block, i) => {
+    const colors = {
+      event: 'linear-gradient(135deg, #FF8C42, #FF6B35)',
+      move: 'linear-gradient(135deg, #4C97FF, #357ABD)',
+      look: 'linear-gradient(135deg, #59C059, #4CAF50)',
+      control: 'linear-gradient(135deg, #9966FF, #7B68EE)',
+      sound: 'linear-gradient(135deg, #FF6B9D, #E91E63)'
+    };
+    html += `<span class="scratch-script-block" style="background:${colors[block.type]}" onclick="removeBlock(${i})">${block.text} ✕</span>`;
+  });
+  area.innerHTML = html;
+}
+
+function removeBlock(index) {
+  scratchScript.splice(index, 1);
+  updateScriptArea();
+}
+
+function clearScript() {
+  scratchScript = [];
+  updateScriptArea();
+  resetScratch();
+}
+
+function resetScratch() {
+  catX = 300; catY = 200; catDir = 90; catSize = 1; catColor = 0;
+  isRunning = false;
+  drawCat();
+}
+
+async function runScratchScript() {
+  if (scratchScript.length === 0) {
+    alert('Adicione blocos primeiro! 👆');
+    return;
+  }
+
+  isRunning = true;
+
+  for (let block of scratchScript) {
+    if (!isRunning) break;
+
+    switch(block.type) {
+      case 'move':
+        if (block.text.includes('10 passos')) {
+          catX += Math.cos((catDir - 90) * Math.PI / 180) * 10;
+          catY += Math.sin((catDir - 90) * Math.PI / 180) * 10;
+        } else if (block.text.includes('direita')) {
+          catDir += 15;
+        } else if (block.text.includes('esquerda')) {
+          catDir -= 15;
+        } else if (block.text.includes('x: 0')) {
+          catX = 300; catY = 200;
+        } else if (block.text.includes('x por')) {
+          catX += 10;
+        }
+        break;
+      case 'look':
+        if (block.text.includes('tamanho')) {
+          catSize += 0.1;
+        } else if (block.text.includes('cor')) {
+          catColor += 25;
+        }
+        break;
+      case 'control':
+        if (block.text.includes('Espere')) {
+          await new Promise(r => setTimeout(r, 1000));
+        } else if (block.text.includes('Repita')) {
+          // Handle repeat by duplicating next blocks
+        }
+        break;
+    }
+
+    // Boundary check
+    catX = Math.max(30, Math.min(570, catX));
+    catY = Math.max(30, Math.min(370, catY));
+
+    drawCat();
+    await new Promise(r => setTimeout(r, 300));
+  }
+
+  isRunning = false;
+}
+
+// ===== NAV ACTIVE STATE =====
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-langs a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (scrollY >= sectionTop - 200) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+
+// ===== TYPING EFFECT IN HERO =====
+const typingTexts = [
+  'print("Olá, Mundo!")',
+  'console.log("Hello, Web!")',
+  'Quando clicar em 🚩',
+  'import tensorflow as tf',
+  'document.body.style.animation = "pulse"',
+  'for i in range(10):'
+];
+
+let typingIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+  const text = typingTexts[typingIndex];
+
+  if (isDeleting) {
+    charIndex--;
+  } else {
+    charIndex++;
+  }
+
+  const display = text.substring(0, charIndex);
+
+  if (!isDeleting && charIndex === text.length) {
+    setTimeout(() => isDeleting = true, 2000);
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    typingIndex = (typingIndex + 1) % typingTexts.length;
+  }
+
+  setTimeout(typeEffect, isDeleting ? 50 : 100);
+}
+
+typeEffect();
+</script>
+
+</body>
+</html>
